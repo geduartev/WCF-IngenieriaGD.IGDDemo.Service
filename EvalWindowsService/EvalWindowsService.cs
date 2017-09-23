@@ -1,12 +1,13 @@
 ﻿namespace EvalWindowsService
 {
     using System.ServiceModel;
+    using System.ServiceModel.Web;
     using System.ServiceProcess;
     using EvalServiceLibrary;
 
     public partial class EvalWindowsService : ServiceBase
     {
-        private ServiceHost host = new ServiceHost(typeof(EvalService));
+        private WebServiceHost host = new WebServiceHost(typeof(EvalService));
 
         public EvalWindowsService()
         {

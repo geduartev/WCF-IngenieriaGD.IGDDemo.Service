@@ -35,13 +35,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\EvalServiceReference\Reference.cs">
+    <Compile Include="Connected Services\ServiceReferenceEval\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -54,32 +55,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\EvalServiceReference\ClientEvalService.EvalServiceReference.Eval.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\EvalServiceReference\EvalServiceLibrary1.xsd">
+    <None Include="Connected Services\ServiceReferenceEval\EvalService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceEval\metadata.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EvalServiceReference\service1.wsdl" />
-    <None Include="Connected Services\EvalServiceReference\service2.xsd">
+    <None Include="Connected Services\ServiceReferenceEval\metadata1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EvalServiceReference\service21.xsd">
+    <None Include="Connected Services\ServiceReferenceEval\metadata2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\EvalServiceLibrary.Eval.datasource" />
     <None Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\EvalServiceReference\" />
+    <ProjectReference Include="..\EvalServiceLibrary\EvalServiceLibrary.csproj">
+      <Project>{e0d28036-a41e-46d4-86ba-0e3a6a04516b}</Project>
+      <Name>EvalServiceLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EvalServiceReference\configuration91.svcinfo" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceEval\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EvalServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceEval\metadata.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EvalServiceReference\Reference.svcmap">
+    <None Include="Connected Services\ServiceReferenceEval\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceEval\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceEval\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

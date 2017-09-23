@@ -17,7 +17,7 @@ namespace EvalServiceLibrary
     /// <summary>
     /// Contrato para las evaluaciones.
     /// </summary>
-    [DataContract]
+    [DataContract(Namespace = "http://www.ingenieriagd.net/WebServiceWCF")]
     public class Eval
     {
         [DataMember]

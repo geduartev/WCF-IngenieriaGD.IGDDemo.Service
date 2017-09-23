@@ -20,8 +20,20 @@ namespace EvalServiceLibrary
     public class EvalService : IEvalService
     {
         List<Eval> evals = new List<Eval>();
+        int evalCount = 0;
 
         #region IEvalService Members
+
+        /// <summary>
+        /// Submits the eval.
+        /// </summary>
+        /// <param name="eval">The eval.</param>
+        public void SubmitEval(Eval eval)
+        {
+            //eval.Id = Guid.NewGuid().ToString();
+            eval.Id = (++evalCount).ToString();
+            evals.Add(eval);
+        }
 
         /// <summary>
         /// Gets the evals.
@@ -29,10 +41,40 @@ namespace EvalServiceLibrary
         /// <returns>
         /// Retorna una lista de evaluaciones.
         /// </returns>
-        public List<Eval> GetEvals()
+        public List<Eval> GetAllEvals()
         {
-            return evals;
+            return this.GetEvalsBySubmitter(null);
 
+        }
+
+        /// <summary>
+        /// Gets the evals by submitter.
+        /// </summary>
+        /// <param name="submitter">The submitter.</param>
+        /// <returns>
+        /// Retorna una evaluación.
+        /// </returns>
+        public List<Eval> GetEvalsBySubmitter(string submitter)
+        {
+            if (string.IsNullOrEmpty(submitter))
+            {
+                return evals;
+            }
+
+            System.Threading.Thread.Sleep(5000);
+            return evals;
+        }
+
+        /// <summary>
+        /// Gets the eval.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// Retorna una evaluación.
+        /// </returns>
+        public Eval GetEval(string id)
+        {
+            return evals.First(e => e.Id.Equals(id));
         }
 
         /// <summary>
@@ -42,16 +84,6 @@ namespace EvalServiceLibrary
         public void RemoveEval(string id)
         {
             evals.Remove(evals.Find(e => e.Id.Equals(id)));
-        }
-
-        /// <summary>
-        /// Submits the eval.
-        /// </summary>
-        /// <param name="eval">The eval.</param>
-        public void SubmitEval(Eval eval)
-        {
-            eval.Id = Guid.NewGuid().ToString();
-            evals.Add(eval);
         }
 
         #endregion

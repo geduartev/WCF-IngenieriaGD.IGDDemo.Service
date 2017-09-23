@@ -11,6 +11,7 @@ namespace EvalServiceLibrary
     using System.Collections.Generic;
     using System.Linq;
     using System.ServiceModel;
+    using System.ServiceModel.Web;
     using System.Text;
 
     /// <summary>
@@ -23,20 +24,41 @@ namespace EvalServiceLibrary
         /// Submits the eval.
         /// </summary>
         /// <param name="eval">The eval.</param>
+        [WebInvoke(Method ="POST", UriTemplate ="evals")]
         [OperationContract]
         void SubmitEval(Eval eval);
+
+        /// <summary>
+        /// Gets the eval.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Retorna una evaluación.</returns>
+        [WebGet(UriTemplate="eval/{id}")]
+        [OperationContract]
+        Eval GetEval(string id);
 
         /// <summary>
         /// Gets the evals.
         /// </summary>
         /// <returns>Retorna una lista de evaluaciones.</returns>
+        [WebGet(UriTemplate = "evals", ResponseFormat = WebMessageFormat.Json)]
         [OperationContract]
-        List<Eval> GetEvals();
+        List<Eval> GetAllEvals();
+
+        /// <summary>
+        /// Gets the evals by submitter.
+        /// </summary>
+        /// <param name="submitter">The submitter.</param>
+        /// <returns>Retorna una evaluación.</returns>
+        [WebGet(UriTemplate = "evals/{submitter}")]
+        [OperationContract]
+        List<Eval> GetEvalsBySubmitter(string submitter);
 
         /// <summary>
         /// Removes the eval.
         /// </summary>
         /// <param name="id">The identifier.</param>
+        [WebInvoke(Method = "DELETE", UriTemplate = "eval/{id}")]
         [OperationContract]
         void RemoveEval(String id);
     }

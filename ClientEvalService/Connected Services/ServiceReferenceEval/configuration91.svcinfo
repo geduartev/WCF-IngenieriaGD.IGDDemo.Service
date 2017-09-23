@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6evXh3tBazaYTtsMduj06ppgfAI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="C8JKzUv/yq7nRP1eQhB/TQn5T44=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IEvalService">
       <properties>
@@ -427,7 +427,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IEvalService" contract="EvalServiceReference.IEvalService" bindingType="basicHttpBinding" address="http://localhost:8080/evalservice/basic" bindingConfiguration="BasicHttpBinding_IEvalService">
+    <endpoint name="BasicHttpBinding_IEvalService" contract="ServiceReferenceEval.IEvalService" bindingType="basicHttpBinding" address="http://localhost:8080/evalservice/basic" bindingConfiguration="BasicHttpBinding_IEvalService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8080/evalservice/basic</serializedValue>
@@ -442,7 +442,7 @@
           <serializedValue>BasicHttpBinding_IEvalService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>EvalServiceReference.IEvalService</serializedValue>
+          <serializedValue>ServiceReferenceEval.IEvalService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -512,7 +512,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_IEvalService" contract="EvalServiceReference.IEvalService" bindingType="netTcpBinding" address="net.tcp://localhost:8888/evalservice" bindingConfiguration="NetTcpBinding_IEvalService">
+    <endpoint name="NetTcpBinding_IEvalService" contract="ServiceReferenceEval.IEvalService" bindingType="netTcpBinding" address="net.tcp://localhost:8888/evalservice" bindingConfiguration="NetTcpBinding_IEvalService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:8888/evalservice</serializedValue>
@@ -527,7 +527,7 @@
           <serializedValue>NetTcpBinding_IEvalService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>EvalServiceReference.IEvalService</serializedValue>
+          <serializedValue>ServiceReferenceEval.IEvalService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -597,7 +597,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetNamedPipeBinding_IEvalService" contract="EvalServiceReference.IEvalService" bindingType="netNamedPipeBinding" address="net.pipe://localhost/evalservice" bindingConfiguration="NetNamedPipeBinding_IEvalService">
+    <endpoint name="NetNamedPipeBinding_IEvalService" contract="ServiceReferenceEval.IEvalService" bindingType="netNamedPipeBinding" address="net.pipe://localhost/evalservice" bindingConfiguration="NetNamedPipeBinding_IEvalService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.pipe://localhost/evalservice</serializedValue>
@@ -612,7 +612,7 @@
           <serializedValue>NetNamedPipeBinding_IEvalService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>EvalServiceReference.IEvalService</serializedValue>
+          <serializedValue>ServiceReferenceEval.IEvalService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -682,7 +682,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IEvalService" contract="EvalServiceReference.IEvalService" bindingType="wsHttpBinding" address="http://localhost:8080/evalservice/ws" bindingConfiguration="WSHttpBinding_IEvalService">
+    <endpoint name="WSHttpBinding_IEvalService" contract="ServiceReferenceEval.IEvalService" bindingType="wsHttpBinding" address="http://localhost:8080/evalservice/ws" bindingConfiguration="WSHttpBinding_IEvalService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8080/evalservice/ws</serializedValue>
@@ -697,7 +697,7 @@
           <serializedValue>WSHttpBinding_IEvalService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>EvalServiceReference.IEvalService</serializedValue>
+          <serializedValue>ServiceReferenceEval.IEvalService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
