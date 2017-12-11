@@ -5,13 +5,28 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using EvalServiceLibrary;
 
-namespace WindowsServiceHost
+namespace WcfServiceApplication
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IService
     {
+        /// <summary>
+        /// News the submit.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="comments">The comments.</param>
+        [OperationContract]
+        void NewSubmit(string name, string comments);
+
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<Eval> GetAll();
 
         [OperationContract]
         string GetData(int value);

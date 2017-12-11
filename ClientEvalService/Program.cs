@@ -20,17 +20,25 @@
             // Al usar la línea comentada es necesario crear un Service References al servicio.
             // EvalServiceClient client = new EvalServiceClient("BasicHttpBinding_IEvalService");
 
-            WebChannelFactory<EvalServiceLibrary.IEvalService> cf =
+            WebChannelFactory<EvalServiceLibrary. > cf =
                 new WebChannelFactory<EvalServiceLibrary.IEvalService>(
                     new Uri("http://localhost:8080/evalservicehost"));
 
             EvalServiceLibrary.IEvalService client = cf.CreateChannel();
 
-            Console.WriteLine("Please enter a command: ");
-            string command = Console.ReadLine();
+            string command = string.Empty;
 
             while (!command.Equals("exit"))
             {
+                Console.Clear();
+                Console.WriteLine("COMMANDS\n");
+                Console.WriteLine("submit");
+                Console.WriteLine("get");
+                Console.WriteLine("list");
+                Console.WriteLine("remove");
+                Console.WriteLine("listasync");
+                Console.WriteLine("\nPlease enter a command: ");
+                command = Console.ReadLine();
                 switch (command)
                 {
                     case "submit":
@@ -53,8 +61,17 @@
                         Console.WriteLine("Please enter the eval id: ");
                         string id = Console.ReadLine();
 
-                        Eval e = client.GetEval(id);
-                        Console.WriteLine("{0} -- {1} said: {2} (id {3})\n", e.TimeSubmitted, e.Submitter, e.Comments);
+                        var e = client.GetEval(id);
+                        if (e != null)
+                        {
+                            Console.WriteLine("{0} -- {1} said: {2} (id {3})\n", e.TimeSubmitted, e.Submitter, e.Comments);
+                        }
+
+                        if (e == null)
+                        {
+                            Console.WriteLine("It don't find evals to id wri");
+                        }
+
                         break;
                     case "list":
                         Console.WriteLine("Please enter the submitter name: ");
@@ -80,7 +97,7 @@
 
                         Console.WriteLine("Calling GetEvals...");
 
-                        //TODO: Verificar por que no carga en pantalla las evaluaciones o si estamos haciendo más el delegado.
+                        //TODO: Verificar por que no carga en pantalla las evaluaciones o si estamos haciendo mal el delegado.
 
                         clientasync.GetAllEvalsAsync();
 
@@ -89,11 +106,10 @@
                         Console.WriteLine();
                         break;
                     default:
-                        Console.WriteLine("Please enter a command.");
+                        Console.WriteLine("Please enter a command.\n");
                         break;
                 }
-
-                Console.WriteLine("Please enter a command: ");
+                Console.WriteLine("\n\nPress ENTER to continue.");
                 command = Console.ReadLine();
             }
 

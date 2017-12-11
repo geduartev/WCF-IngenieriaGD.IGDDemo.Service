@@ -47,7 +47,6 @@
     <Compile Include="EvalService.cs" />
     <Compile Include="ICourseService.cs" />
     <Compile Include="IEvalService.cs" />
-    <Compile Include="Interface1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

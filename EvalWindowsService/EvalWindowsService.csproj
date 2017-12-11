@@ -68,12 +68,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EvalServiceLibrary\EvalServiceLibrary.csproj">
-      <Project>{e0d28036-a41e-46d4-86ba-0e3a6a04516b}</Project>
-      <Name>EvalServiceLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="Readme.md" />
   </ItemGroup>
