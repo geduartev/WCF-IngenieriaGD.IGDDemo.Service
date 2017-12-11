@@ -1,2 +1,0 @@
-﻿<%@ ServiceHost Service="EvalServiceLibrary.CourseService"
-    Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>
