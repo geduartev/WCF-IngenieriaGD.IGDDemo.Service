@@ -12,7 +12,7 @@
         };
 
         function OnLookupComplete(result, state) {
-            val sel = $("#Select1");
+            var sel = $("#Select1");
             sel.lenght = 0;
             for (i in result)
                 sel.add(new Option(result[i], result[i]));

@@ -62,7 +62,7 @@ namespace EvalServiceLibrary
             }
 
             System.Threading.Thread.Sleep(5000);
-            return evals;
+            return evals.Where(e => e.Submitter == submitter).ToList();
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace EvalServiceLibrary
         /// </returns>
         public Eval GetEval(string id)
         {
-            return evals.First(e => e.Id.Equals(id));
+            return evals.FirstOrDefault(e => e.Id.Equals(id));
         }
 
         /// <summary>
