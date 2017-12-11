@@ -1,1 +1,5 @@
-Cambio de nombre de solución de WebServiceWCF a IngenieriaGD.IGDDemo.Service
+IngenieriaGD.IGDDemo.Service
+
+
+
+
