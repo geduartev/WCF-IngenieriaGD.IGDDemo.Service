@@ -14,7 +14,13 @@ namespace IngenieriaGD.IGDDemo.Service.Tests
         [TestMethod()]
         public void GetClientTest()
         {
-           Assert.Fail();
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void WriteInformationTrackingTest()
+        {
+            Assert.Fail();
         }
     }
 }
